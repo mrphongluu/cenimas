@@ -10,13 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::pattern('id','([0-9]*)');
+Route::pattern('slug','(.*)');
+Auth::routes();
 use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('auth.login');
 });
-Route::pattern('id','([0-9]*)');
-Route::pattern('slug','(.*)');
-Auth::routes();
+
 
 Route::group(['namespace'=>'Admin','middleware'=>'auth'],function (){
 

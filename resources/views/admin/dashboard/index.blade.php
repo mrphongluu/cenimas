@@ -104,6 +104,8 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @if(!empty($list_id))
+
                         @foreach($list_id as $key=> $list)
 
                         <tr>
@@ -111,6 +113,7 @@
                             <td>{{ implode(", ", $list)}}</td>
                         </tr>
                             @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>

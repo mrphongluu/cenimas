@@ -31,10 +31,12 @@ class DashboardsController extends Controller
         $show =$this->repository->showDasboard();
         $totalTicker =$this->repository->totalTicker();
         $list = $this->repository->ticketDone();
-        $list_id=[];
-        $total = $this->repository->doneBook();
-        foreach ($list as $key=>$value) {
-            $list_id[$value->uname][] = $value->name;
+        if (!empty($list)){
+            $list_id=[];
+            $total = $this->repository->doneBook();
+            foreach ($list as $key=>$value) {
+                $list_id[$value->uname][] = $value->name;
+            }
         }
 //        dd($list);
         return view('admin.dashboard.index',compact('show','totalTicker','list_id','total'));

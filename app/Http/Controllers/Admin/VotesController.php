@@ -39,7 +39,10 @@ class VotesController extends Controller
 //        $getValues = $this->repository->all();
         $getValues = $this->repository->winnerFilm();
         $now = date('Y-m-d H:i:s');
-        $getMonthVotes = $this->repository->getMonthVote()->expiry_date;
+        $getMonthVotes = $this->repository->getMonthVote();
+        if (!empty($getMonthVotes)){
+            $getMonthVotes= $getMonthVotes->expiry_date;
+        }
 
         return view('admin.votes.index',compact('getValues','getMonthVotes','now'));
     }
@@ -107,11 +110,14 @@ class VotesController extends Controller
 
         //show fim
         $getMonthVotes = $this->repository->getMonthVote();
-        $now = date('Y-m-d H:i:s');
-        if ($getMonthVotes->expiry_date < $now)
-        {
-            return redirect()->route('admin.ticket.index');
+        if(!empty($getMonthVotes)){
+            $now = date('Y-m-d H:i:s');
+            if ($getMonthVotes->expiry_date < $now)
+            {
+                return redirect()->route('admin.ticket.index');
+            }
         }
+
         if(!empty($getMonthVotes)){
             $getFims = $this->repository->getVoteValue($getMonthVotes->id);
         }else{

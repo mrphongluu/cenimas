@@ -64,8 +64,11 @@ class DashboardRepositoryEloquent extends BaseRepository implements DashboardRep
     public function doneBook()
     {
         $filmTop = $this->showDasboard();
-        $d = BookingSeat::where('film_id',$filmTop->id)->count('name');
-        return $d;
+        if(!empty($filmTop)){
+            $d = BookingSeat::where('film_id',$filmTop->id)->count('name');
+            return $d;
+        }
+
     }
 
     /**

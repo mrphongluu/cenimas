@@ -42,10 +42,11 @@
                         </div>
                     @endif
                     <!-- Trigger the modal with a button -->
-
                         <button type="button" class="editor_create btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">New Vote</button>
+                        @if(!empty($getMonthVotes))
                         @if($getMonthVotes < $now)
                         <a href="{{route('admin.rooms.room1')}}"><button type="button" class="editor_create btn btn-success btn-lg" data-toggle="modal" data-target="#">SEAT SELECTION</button></a>
+                        @endif
                         @endif
                         <div class="modal fade" id="myModal" role="dialog">
                             <form id="FormValue" action="{{route('admin.votes.create')}}" method="POST" enctype="multipart/form-data">

@@ -33,8 +33,8 @@ class VoteRepositoryEloquent extends BaseRepository implements VoteRepository
     public function  getTopVote(){
         $listVote = DB::table('vote_value')
             ->selectRaw('vote_value.* ,(select count(vote_value_user.id) from vote_value_user where vote_value_id = vote_value.id ) as vote ')
-            ->whereIn( 'vote_id',DB::table('votes')->select('id')->whereMonth('updated_at',date('m'))
-            ->whereYear('updated_at',date('Y')))
+            ->whereIn( 'vote_id',DB::table('votes')->select('id')->whereMonth('created_at',date('m'))
+            ->whereYear('created_at',date('Y')))
             ->orderBy('vote','DESC')
             ->limit(3) ->get();
         return $listVote;
@@ -49,7 +49,7 @@ class VoteRepositoryEloquent extends BaseRepository implements VoteRepository
     public function getMonthVote()
     {
         return DB::table('votes')
-            ->whereMonth('updated_at',date('m') )->whereYear('updated_at',date('Y'))
+            ->whereMonth('created_at',date('m') )->whereYear('created_at',date('Y'))
             ->first();
 
     }
@@ -69,8 +69,8 @@ class VoteRepositoryEloquent extends BaseRepository implements VoteRepository
     {
         $listVote = DB::table('vote_value')
             ->selectRaw('vote_value.* ,(select count(vote_value_user.id) from vote_value_user where vote_value_id = vote_value.id ) as vote ')
-            ->whereIn( 'vote_id',DB::table('votes')->select('id')->whereMonth('updated_at',date('m'))
-                ->whereYear('updated_at',date('Y')))
+            ->whereIn( 'vote_id',DB::table('votes')->select('id')->whereMonth('created_at',date('m'))
+                ->whereYear('created_at',date('Y')))
             ->orderBy('vote','DESC')
             ->first();
         return $listVote;
