@@ -54,4 +54,10 @@ return [
         'client_secret' => 'PE4SwM5JbIRCKw-SwVhKBuyJ',
         'redirect'      => 'http://green1.vn/google/callback',
     ],
+
+//    'google' => [
+//        'client_id'     => '691015112962-t4b5ipj0sng236bgp2tann7aa07gqkgi.apps.googleusercontent.com',
+//        'client_secret' => 'RDNeG_hcPQ4VGznJvNwa6pXU',
+//        'redirect'      => 'http://cinema.greenglobal.vn:9940/google/callback',
+//    ],
 ];

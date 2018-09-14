@@ -7,6 +7,7 @@ use Prettus\Repository\Contracts\Transformable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Prettus\Repository\Traits\TransformableTrait;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
+use Illuminate\Notifications\Notifiable;
 
 /**
  * Class User.
@@ -15,7 +16,7 @@ use Zizaco\Entrust\Traits\EntrustUserTrait;
  */
 class User extends  Authenticatable implements Transformable
 {
-    use TransformableTrait, EntrustUserTrait;
+    use TransformableTrait, EntrustUserTrait,Notifiable;
 
     /**
      * The attributes that are mass assignable.

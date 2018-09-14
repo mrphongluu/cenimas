@@ -25,8 +25,6 @@ $(document).on('keyup','.quantity',function () {
             console.log(data);
         });
     }, 2000 );
-
-
 });
 $(document).ready(function () {
     var sum = 0;

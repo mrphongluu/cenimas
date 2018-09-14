@@ -51,7 +51,7 @@
   <!-- /.lockscreen-item -->
   @if ($errors->has('email'))
     <div class="help-block text-center">
-      <strong style="color: red">{{ $errors->first('email') }}</strong
+      <strong style="color: red">{{ $errors->first('email') }}</strong>
     </div>
 
   @endif

@@ -10,7 +10,6 @@
         <h1>
             Companies
             <small>Admin LTE</small>
-
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -57,7 +56,7 @@
                                         <div class="modal-body">
                                             <div class="form-group">
                                                 <label for="usr">Company:</label>
-                                                <input type="text" name="name" placeholder="Name" required class="form-control" id="name">
+                                                <input type="text" name="name" placeholder="Name" required  class="form-control" id="name">
                                             </div>
                                         </div>
                                         <div class="modal-footer">

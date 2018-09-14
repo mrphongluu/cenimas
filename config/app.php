@@ -173,6 +173,7 @@ return [
 
 
 
+
     ],
 
     /*
@@ -225,6 +226,8 @@ return [
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
+
 
 
 
